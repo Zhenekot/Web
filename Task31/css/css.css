@@ -1,0 +1,52 @@
+body{
+    font-family: "Arial", sans-serif;
+    font-size: 14px;
+   
+}
+
+header{
+    background-image:url("../img/bg-partnership.svg") ;
+    background-color: #4a87fa;
+    color: #ffffff;
+}
+
+.rect{
+    width: 45%;
+    margin:auto;
+}
+.rect_grey{
+    background-color: lightgray;
+    text-align: center;
+    margin-bottom: 10px;
+    color: white;
+    font-size: 10px;
+    margin-top: 3px;
+    
+}
+.rect_green{
+    background-color: rgb(91, 197, 91);
+    width: 60%;
+    padding: 5px;
+}
+.rect_blue{
+    background-color: rgb(95, 121, 213);
+    width: 20%;
+    padding: 5px;
+}
+
+.rect_blue_2{
+    background-color: rgb(95, 121, 213);
+    width: 10%;
+    padding: 5px;
+}
+
+.ava_info{
+    margin: auto;
+    width: 45%;
+    padding: 50px;
+}
+
+.info_myself{
+    float: right; 
+    width: 60%;
+}
