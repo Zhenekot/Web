@@ -1,16 +1,172 @@
-body{
-    margin: 0 auto;
-    width: 1440;
-    font-size: "Arial", sans-serif;
+body {
+    width: 1440px;
+    margin: auto;
+    text-align: center;
+    font-family: "Roboto", sans-serif;
+    /* top: 50%;
+    left: 50%; */
 }
-a{
+
+a {
     color: inherit;
     text-decoration: none;
 }
-.reviews-item{
-    display: inline-block;
-}
-.main-header-nav{
-    text-transform: uppercase;
+
+li{
+    list-style-type: none;
     display: inline;
+}
+
+.main-header {
+    display: inline-block;
+    margin-top: 6%;
+}
+
+.main-header-nav > a > img {
+    margin-bottom: 3%;
+}
+
+.main-footer
+{
+    padding: 25px;
+    background-color: #575757;
+}
+
+.footer-navigation{
+    display: flex;
+    justify-content: space-around;
+    width: 70%;
+    padding-bottom: 20px;
+    padding-top: 20px;
+    margin: auto;
+    color: white;
+    border-bottom: 1px solid #9A9A9A;
+}
+
+.footer-navigation::after{
+    box-sizing: border-box;
+}
+
+.footer-navigation-item{
+    margin: 20px;
+    color: lightgray;
+}
+
+.reviews-item {
+    display: inline-block;
+    text-align: left;
+    justify-content: center;
+    min-height: 379px;
+    max-width: 370px;
+    margin-right: 29px;
+}
+
+.reviews-link {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.reviews-link:hover {
+    color: rgb(206, 135, 2);
+}
+
+.social-list {
+    display: flex;
+    justify-content: center;
+}
+
+.social-list-item {   
+    display: flex;
+    justify-content: center;
+    background-color: white;
+
+    width: 22px;
+    height: 22px;
+
+    margin: 10px;
+    padding: 10px;
+}
+
+.visually-hidden {
+    visibility: hidden;
+    display: none;
+}
+
+.site-navigation li {
+    text-transform: uppercase;
+}
+
+.site-navigation-item{
+    margin: 30px;
+}
+
+.site-navigation-item:hover {
+    color: orange;
+}
+
+.headline > h2
+{
+    font-weight: normal;
+    text-align: center;
+    letter-spacing: 2px;
+    position: relative;
+    top: 200px;
+    color: white;
+    text-transform: uppercase;
+    font-size: 76px;
+    margin: 0px; 
+}
+
+.headline
+{
+    height: 564px;
+    padding: 0px;
+    bottom: 100px;
+}
+
+.headline > p
+{
+    position: relative;
+    bottom: 130px;
+    color: white;
+    max-width: 498px;
+    margin: auto;
+    text-align: center;
+    line-height: 2;
+}
+
+.promo {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    height: 556px;
+    background-color: lightgray;
+}
+
+.promo-item {
+    margin-bottom: 20px;
+}
+
+.promo > h2 {
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 16px;
+    margin-top: 20px;
+}
+
+.promo-item > h3 {
+    font-weight: bold;
+}
+
+.promo-circle {
+    position: absolute;
+    top: -75px;
+    background: red;
+    width: 707px;
+    height: 707px;
+    border-radius: 50%;
+}
+
+.promo-circle-info {
+    margin: 0 auto;
 }
