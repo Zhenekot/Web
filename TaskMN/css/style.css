@@ -54,11 +54,13 @@ a{
 
 .header-nav-list-item:hover{
     border-bottom: 1px solid #D90000;
+    margin-bottom: 0px;
 }
 
 .header-nav-list-item{
     position: relative;
     padding-bottom: 4px;
+    margin-bottom: 1px;
 }
 
 .current-slide{
@@ -341,5 +343,4 @@ input[type="submit"]{
     display: flex;
     flex-direction: row;
 }
-
 
