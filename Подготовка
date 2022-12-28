@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Котейка</title>
+</head>
+<body>
+    <header class="main-head">
+        <nav class="container nav-head">
+            <a>
+                <img src="img/logo.svg" alt="Логотип">
+            </a>
+            <ul class="list-head">
+                <li class="item-head">
+                    <a href="#sect-two">Почему мы?</a>
+                </li>
+                <li class="item-head">
+                    <a href="#sect-three">Номера</a>
+                </li>
+                <li class="item-head">
+                    <a href="#sect-four">Отзывы</a>
+                </li>
+                <li class="item-head">
+                    <a href="#sect-five">Как нас найти</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <main class="main-main">
+        <h1 class="visible">Гостиница Котейка</h1>
+        <section class="container section-one">
+            <p class="city-one-sect">Санкт-Петербург</p>
+            <h2 class="header-one-sect">Котейка</h2>
+            <p class="descr-one-sect">Уютная гостиница для котов и кошек</p>
+            <a class="but-one-sect" href="#">Забронировать</a>
+            <img class="promo-cat" src="img/photo-promo-1.jpg" alt="Промо кот">
+        </section>
+        <section class="container section-two">
+            <h2 class="header-two-sect" id="sect-two">Почему мы?</h2>
+            <img class="paw1-cat" src="img/paw.svg" alt="Лапка">
+            <div class="list-service">
+                <div class="item-service">
+                    <img src="img/thermometer.svg" alt="Термометр">
+                    <h3 class="header-item-serv">Комфортная температура</h3>
+                    <p class="text-item-serv">Во всех номерах поддерживается комфортная температура в пределах 23 - 25 градусов. 
+                        В каждом номере можно дополнительно отрегулировать температуру.
+                    </p>
+                </div>
+                <div class="item-service">
+                    <img src="img/video-monitoring.svg" alt="Камера">
+                    <h3 class="header-item-serv">Видеонаблюдение</h3>
+                    <p class="text-item-serv">Мы предоставляем доступ в нашу систему. Вы сможете следить за своим питомцем 
+                        со своего смартфона или компьютера.
+                    </p>
+                </div>
+                <div class="item-service">
+                    <img src="img/taxi.svg" alt="Машина">
+                    <h3 class="header-item-serv">Услуги Зоотакси</h3>
+                    <p class="text-item-serv">
+                        Мы приедем за вашим питомцем в любой район Санкт-Петербурга.
+                    </p>
+                </div>
+                <div class="item-service">
+                    <img src="img/food.svg" alt="Корм">
+                    <h3 class="header-item-serv">Сбалансированное питание</h3>
+                    <p class="text-item-serv">
+                        Вы можете привезти свой корм или доверить рацион своего питомца нашим профессионалам.
+                    </p>
+                </div>
+                <div class="item-service">
+                    <img src="img/cat.svg" alt="Кот">
+                    <h3 class="header-item-serv">Ежедневные прогулки</h3>
+                    <p class="text-item-serv">По вашему желанию мы выгуливаем вашего питомца два раза 
+                        в день на специализированной закрытой территории.
+                    </p>
+                </div>
+                <div class="item-service">
+                    <img src="img/cat.svg" alt="Помощь">
+                    <h3 class="header-item-serv">Лучшие ветеринары</h3>
+                    <p class="text-item-serv">
+                        В гостинице 24 часа дежурит ветеринарный врач, который окажет любую помощь в случае необходимости.
+                    </p>
+                </div>
+            </div>
+        </section>
+        <section class="container section-three">
+            <h2 class="header-three-sect" id="sect-three">Номера</h2>
+            <img class="fish-cat" src="img/fish.svg" alt="Рыбка">
+            <div class="list-three-sect">
+                <div class="item-three-sect">
+                    <img src="img/photo-order-1.jpg" alt="Кот в домике">
+                    <form action="#" method="post">
+                        <fieldset>
+                            <legend class="booking-header">Забронировать номер</legend>
+                            <input type="text" value="Ваше имя" id="name-id" name="us-name">
+                            <input type="text" value="Имя питомца" id="name-pet-id" name="pet-name">
+                            <input type="tel" value="Телефон" id="tel-id" name="tel-name">
+                            <input type="email" value="E-mail" id="em-id" name="em-name">
+                            <div>
+                                <p>Дата заезда</p>
+                                <p>c <input type="text" placeholder="26.01.2020"> по <input type="text" placeholder="26.02.2020"></p>
+                            </div>
+                            <button type="submit">Отправить заявку<img src="img/paw-small-2.svg" alt="Лапка"></button>
+                        </fieldset>
+                    </form>
+                </div>
+                
+                <div class="list-three-sect">
+                    <p class="header-list-three-sect">
+                        Эконом плюс
+                    </p>
+                    <ul class="list-home">
+                        <li class="item-home">
+                            Площадь - 0,90 м2
+                        </li>
+                        <li class="item-home">
+                            Размеры (ШхГхВ) — 90х100х180 см
+                        </li>
+                        <li class="item-home">
+                            Цена за сутки: 200₽
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <section class="container section-four">
+            <h2 id="sect-four" class="header-four-sect">Отзывы</h2>
+            <img class="paw2-cat" src="img/paw.svg" alt="Лапка">
+            <div class="reviews">
+                <blockquote class="item-reviews">
+                    <p class="descrip-review">
+                        Первый раз пришлось оставить нашего котика в гостинице, очень переживали. 
+                        Администратор Мария каждый день высылала нам фото нашего питомца, рассказывала, 
+                        как он себя чувствует. И мы и котик остались очень довольны!
+                    </p>
+                    <cite class="who-review">Валерия Гришаева</cite>
+                    <p class="date-review">15 ноября, 2019</p>
+                </blockquote>
+                <blockquote class="item-reviews">
+                    <p class="descrip-review">
+                        Гостиницу для питомцев нам посоветовали друзья. Они всегда оставляют здесь своего кота, когда уезжают. 
+                        В “Котейке” очень хорошо заботятся о питомцах, в гостинице очень чисто. Всем рекомендую! Будем обращаться еще.
+                    </p>
+                    <cite class="who-review">Екатерина Минаева</cite>
+                    <p class="date-review">10 октября, 2019</p>
+                </blockquote>
+                <blockquote class="item-reviews">
+                    <p class="descrip-review">
+                        Мой кот — настоящая привереда, угодить ему сложно. У меня были особые требования к уходу за ним, и “Котейка” отлично справились. 
+                        Я часто наблюдал по видео за питомцем со своего телефона, это очень удобно.
+                    </p>
+                    <cite class="who-review">Павел Нечаев</cite>
+                    <p class="date-review">2 августа, 2019</p>
+                </blockquote>
+            </div>
+        </section>
+            <section class="container section-five">
+                <div class="list-five-sect">
+                <h2 id="sect-five">Как нас найти</h2>
+                    <dl class="list-found">
+                        <dt class="item-found">Адрес</dt>
+                            <dd class="item-descr-found">Санкт-Петербург, ул Большая Конюшенная, д 19</dd>
+                        <dt class="item-found">Режим работы</dt>
+                            <dd class="item-descr-found">Ежедневно, с 9:00 до 20:00</dd>
+                        <dt class="item-found">Телефон</dt>
+                            <dd class="item-descr-found">8 (800) 333-55-99</dd>
+                        <dt class="item-found">E-mail</dt>
+                            <dd class="item-descr-found">info@cat-hotel.ru</dd>
+                        <dt class="item-found social">Социальные сети</dt>
+                            <dd><img src="img/facebook.svg" alt="facebook"></dd>
+                            <dd><img src="img/instagram.svg" alt="instagram"></dd>
+                            <dd><img src="img/vk.svg" alt="vk"></dd>
+                    </dl>
+                    </div>
+                    <img class="mark-cat" src="img/marker.svg" alt="Марка котика">
+                    <img src="img/map.jpg" alt="Карта">
+            </section>
+    </main>
+    <footer class="main-footer">
+        <div class="list-footer container">
+            <a>
+                <img src="img/logo.svg" alt="Логотип">
+            </a>
+            <ul class="list-last">
+                <li class="item-last">
+                    <a href="sect-two">Почему мы?</a>
+                </li>
+                <li class="item-last">
+                    <a href="sect-three">Номера</a>
+                </li>
+                <li class="item-last">
+                    <a href="sect-four">Отзывы</a>
+                </li>
+                <li class="item-last">
+                    <a href="sect-five">Как нас найти</a>
+                </li>
+            </ul>
+        </div>
+    </footer>
+</body>
+</html>
+
+<!-- <dl>
+    <dt>Комфортная температура</dt>
+        <dd>Во всех номерах поддерживается комфортная температура в пределах 23 - 25 градусов. 
+            В каждом номере можно дополнительно отрегулировать температуру.</dd>
+    <dt>Видеонаблюдение</dt>
+        <dd>Мы предоставляем доступ в нашу систему. Вы сможете следить за своим питомцем 
+        со своего смартфона или компьютера.</dd>
+    <dt>Услуги Зоотакси</dt>
+        <dd>Мы приедем за вашим питомцем в любой район Санкт-Петербурга.</dd>
+    <dt>Сбалансированное питание</dt>
+        <dd>Вы можете привезти свой корм или доверить рацион своего питомца нашим профессионалам.</dd>
+    <dt>Ежедневные прогулки</dt>
+        <dd>По вашему желанию мы выгуливаем вашего питомца два раза в день на специализированной закрытой территории.</dd>
+    <dt>Лучшие ветеринары</dt>
+        <dd>В гостинице 24 часа дежурит ветеринарный врач, который окажет любую помощь в случае необходимости.</dd> -->
