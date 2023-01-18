@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Task2.1.3</title>
+</head>
+<body>
+    <header class="container">
+        <h1>Анкета посетителя конференции</h1>
+    </header>
+    <main class="container main">
+        <form class="form-my" action="get">
+            <input class="photo-my" type="text" id="photo-id" name="photo" placeholder="Тут будет фото">
+
+            <div class="name-lastname">
+                <label for="name-id">Имя и фамилия</label>
+                <input type="text" id="name-id" name="namel">
+            </div>
+
+            <div class="place-job">
+                <label for="place-id">Место работы</label>
+                <input type="text" id="place-id" name="place">
+            </div>  
+            
+            <div class="city-my">
+                <label for="city-id">Город</label>
+                <input type="text" id="city-id" name="city">
+            </div>
+
+            <div class="twitter-my">
+                <label for="twit-id">Twitter</label>
+                <input type="text" id="twit-id" name="twit">
+            </div>
+
+            <div class="instagram-my">
+                <label for="inst-id">Instagram</label>
+                <input type="text" id="inst-id" name="inst">
+            </div>
+
+            <div class="about-me">
+                <label for="myself-id">О себе</label>
+                <textarea rows="6" id="myself-id" name="myself"></textarea>
+            </div>
+            <p class="our-post">Ваша должность</p>
+            <div class="designer-my">
+                <input type="checkbox" id="designer" name="designer-id" checked>
+                <label for="designer-id">Дизайнер</label>
+            </div>
+
+            <div class="developer-my">
+                <input type="checkbox" id="developer-id" name="developer">
+                <label for="developer-id">Разработчик</label>
+            </div>
+
+            <div class="manager-my">
+                <input type="checkbox" id="manager-id" name="manager">
+                <label for="manager-id">Менеджер</label>
+            </div>
+
+            <div class="other-my">
+                <input type="checkbox" id="other-id" name="other">
+                <label for="other-id">Другая</label>
+            </div>
+        </form>
+    </main>
+</body>
+</html>

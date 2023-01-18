@@ -1,0 +1,108 @@
+.container{
+    margin: 0 auto;
+    width: 1000px; 
+}
+
+body{
+    font-size: 16px;
+    font-family: Verdana, sans-serif;
+}
+
+.form-my{
+    display: grid;
+    grid-template-columns: 300px repeat(4, 150px);
+    grid-template-rows: repeat(3, 60px) 110px 40px 30px;
+    gap: 10px;
+}
+
+.photo-my{
+    grid-column: 1 / 2;
+    grid-row: 1 / 7;
+    background-color: #E6E6FA;
+    border: 1px solid #B5DCE8;
+    border-radius: 8px;
+}
+
+.name-lastname{
+    grid-column: 2 / 6;
+    grid-row: 1 / 2;
+    display: flex;
+    flex-direction: column; 
+}
+
+.place-job{
+    grid-column: 2 / 4;
+    grid-row: 2 / 3;
+    display: flex;
+    flex-direction: column;
+}
+
+.city-my{
+    grid-column: 4 / 6;
+    grid-row: 2 / 3;
+    display: flex;
+    flex-direction: column;
+}
+
+.twitter-my{
+    grid-column: 2 / 4;
+    grid-row: 3 / 4;
+    display: flex;
+    flex-direction: column;
+}
+
+.instagram-my{
+    grid-column: 4 / 6;
+    grid-row: 3 / 4;
+    display: flex;
+    flex-direction: column;
+}
+
+.about-me{
+    grid-column: 2 / 6;
+    grid-row: 4 / 5;
+    display: flex;
+    flex-direction: column;
+}
+
+.our-post{
+    grid-column: 2 / 6;
+    grid-row: 5 / 6;
+}
+
+.disagner-my{
+    grid-column: 2 / 3;
+    grid-row: 6 / 7;
+}
+
+input[type="text"]:not(.photo-my){
+    height: 35px;
+    background-color: #E6E6FA;
+    border: 1px solid #B5DCE8;
+    border-radius: 8px;
+}
+
+textarea{
+    background-color: #E6E6FA;
+    border: 1px solid #B5DCE8;
+    border-radius: 8px;
+}
+header{
+    display: flex;
+    justify-content: center;
+    padding-bottom: 20px;
+}
+
+h1{
+    font-size: 24px;
+}
+
+.photo-my::-webkit-input-placeholder{
+    color:black;
+    text-align: center;
+    font-size: 16px;
+}
+
+.designer-my, .developer-my, .manager-my, .other-my{
+    padding-top: 10px;
+}
