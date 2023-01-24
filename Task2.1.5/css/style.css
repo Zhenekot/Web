@@ -1,0 +1,16 @@
+.container{
+    margin: 0 auto;
+    width: 1170px;
+}
+
+.grid-footer{
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows:auto auto;
+    gap: 55px 113px;
+}
+
+.lists-items{
+    display:flex;
+    flex-direction: row;
+}
