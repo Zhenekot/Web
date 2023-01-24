@@ -1,0 +1,162 @@
+header{
+    background-color: #F8F7FD;
+}
+
+body{
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    margin: 0;
+    padding: 0;
+    color: #161517;
+}
+
+.container{
+    max-width: 1170px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 10px 0;
+}
+
+.logo-a{
+    padding-left: 0;
+}
+
+.container > .logo-a{
+    margin: 0;
+}
+
+li{
+    text-decoration: none;
+    list-style: none;
+}
+
+.nav-list, .sign-list{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding-left: 0;
+    margin-left: 0;
+}
+
+.active{
+   color:  #0F00B6;
+}
+
+a{
+    position: relative;
+    display: block;
+    color: inherit;
+    text-decoration: none;
+    padding: 10px;
+}
+
+
+a.button{
+    display: block;
+    color: inherit;
+    text-decoration: none;
+    font-weight: 500;
+    text-align: center;
+    margin-top: 4px;
+}
+
+a.button-outline{
+    border: 2px solid #0F00B6;
+    height: 39px;
+    max-width: 86px;
+    box-sizing: border-box;
+    padding: 8px 24px;
+}
+
+a.button-filled{
+    color: #F8F7FD;
+    background-color: #0F00B6;
+    max-width: 146px;
+    padding: 10px 25px;
+    width: 96px;
+    margin-left: 25px;
+}
+
+.nav-list-item{
+    margin-top: 5px;
+    margin-left: 0;
+}
+
+.nav-list-item > a{
+    margin-left: 0;
+    margin-right: 5px;
+}
+
+.nav-list{
+    margin-left: 10px;
+    margin-right: 292px;
+}
+
+.logo{
+    opacity: 1;
+    transition: opacity 0.3s;
+}
+
+.logo:hover,
+.logo:focus {
+  opacity: 0.6;
+}
+
+@keyframes bounce {
+    0%, 20%, 60%, 100% {
+        transform: translateY(0);
+        transform: translateY(0);
+    }
+
+    40% {
+        transform: translateY(-20px);
+        transform: translateY(-20px);
+    }
+
+    80% {
+        transform: translateY(-10px);
+        transform: translateY(-10px);
+    }
+}
+
+.button:hover {
+    animation: bounce 1s;
+}
+
+.nav-list-item > a:hover{
+    animation: bounce 1s
+}
+
+.nav-list > li.about > a{
+    width: 42px;
+}
+
+.nav-list > li.active > a{
+    width: 114px;
+}
+
+.nav-list > li.cost > a{
+    width: 42px;
+}
+
+.nav-list > li.sale > a{
+    width: 48px;
+}
+
+.nav-list > li.reviwes > a{
+    width: 61px;
+}
+
+.nav-list > li.contact > a{
+    width: 74px;
+}
+
+.sign-list{
+    min-width: 257px;
+}
