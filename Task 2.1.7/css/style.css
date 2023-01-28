@@ -1,0 +1,143 @@
+@font-face {
+    font-family: "PTRootUI";
+    src: url("../fonts/PTRootUI-Regular.woff2") format("woff2"), url("../fonts/PTRootUI-Regular.woff") format("woff");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "PTRootUI";
+    src: url("../fonts/PTRootUI-Medium.woff2") format("woff2"), url("../fonts/PTRootUI-Medium.woff") format("woff");
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "PTRootUI";
+    src: url("../fonts/PTRootUI-Bold.woff2") format("woff2"), url("../fonts/PTRootUI-Bold.woff") format("woff");
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+body {
+    width: 1366px;
+    margin: 0 auto;
+    font-family: 'PTRootUI';
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 23px;
+    font-style: normal;
+
+    background-color: #FFFFFF;
+    color: #120A22;
+}
+
+.container {
+    margin: 50px 98px 435px 50px;
+    width: 833px;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul,
+ol {
+    list-style: none;
+}
+
+.list-bread {
+    display: flex;
+    flex-direction: row;
+    width: 380px;
+    justify-content: flex-start;
+    padding-left: 49px;
+    margin-bottom: 0px;
+}
+
+.item-bread {
+    display: inline;
+}
+
+.article {
+    width: 733px;
+    margin-left: 148px;
+    margin-top: 40px;
+}
+
+.article-head {
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 45px;
+    margin-bottom: 20px;
+
+}
+
+.display-abstract {
+    margin-top: 0;
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 130%;
+    margin-bottom: 0;
+}
+
+.list-abstract {
+    margin: 31px 0;
+    width: 326px;
+}
+
+.item-abstract > a {
+    text-decoration: underline;
+}
+
+.why-abs {
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 130%;
+}
+
+.descr-abs {
+    margin: 0;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 130%;
+    width: 700px;
+}
+
+.article ol {
+    margin-bottom: 30px;
+    padding: 0;
+    list-style: none;
+    counter-reset: num;
+}
+
+.article li {
+    position: relative;
+    counter-increment: num;
+    margin-bottom: 15px;
+    padding-left: 23px;
+    font-size: 18px;
+    line-height: 23px;
+}
+
+.article li::before {
+    content: counter(num) ".";
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.descr-abs-one, .descr-abs-three{
+    margin:0;
+}
+
+.descr-abs-two{
+    margin: 10px 0;
+}
+
