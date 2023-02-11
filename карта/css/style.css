@@ -1,0 +1,67 @@
+body {
+  width: 550px;
+  height: 400px;
+  margin: 0;
+  padding: 0;
+}
+
+.map {
+  width: 400px;
+  height: 200px;
+  margin: 0 auto;
+}
+
+.map img {
+  float: left;
+  margin: 0;
+  padding: 0;
+}
+
+.part-t{
+  transform: rotate(-90deg);
+}
+
+.part-h{
+  transform: rotate(-90deg);
+}
+
+.part-q{
+  transform: rotate(90deg);
+}
+
+.part-u{
+  transform: rotate(90deg);
+}
+
+.part-i{
+  transform: rotate(90deg);
+}
+
+.part-c{
+  transform: rotate(90deg);
+}
+
+
+.part-b{
+  transform: rotate(-90deg);
+}
+
+.part-o{
+  transform: rotate(-90deg);
+}
+
+.part-n{
+  transform: rotate(180deg);
+}
+
+.part-g{
+  transform: rotate(180deg);
+}
+
+.part-a{
+  transform: rotate(180deg);
+}
+
+.part-s{
+  transform: rotate(180deg);
+}
