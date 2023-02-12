@@ -1,0 +1,42 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 570px;
+  height: 250px;
+}
+
+.deck {
+  margin: 0 auto;
+  padding-top: 50px;
+  width: 570px;
+}
+
+.deck > img {
+  position: relative;
+  display: inline-block;
+  margin-right: -4px;
+  width: 110px;
+}
+
+.queen {
+  transform: translate(0, -5px);
+}
+
+.jack {
+  transform: rotate(-5deg) scale(90%) translate(20px, 0);
+}
+
+.ten {
+  transform: rotate(-10deg) scale(80%) translate(45px, 20px);
+}
+
+.king {
+  transform: rotate(5deg) scale(90%) translate(-20px, 0);
+  z-index: -1;
+}
+
+.ace {
+  transform: rotate(10deg) scale(80%) translate(-45px, 20px);
+  z-index: -2;
+}
