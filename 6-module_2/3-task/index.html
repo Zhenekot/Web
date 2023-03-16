@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Бангкок Экспресс: Карусель</title>
+
+  <link rel="stylesheet" href="./index.css" />
+  <link rel="stylesheet" href="../../assets/styles/common.css" />
+</head>
+
+<body>
+  <div class="container">
+  </div>
+
+  <script type="module">
+    // import slides from './slides.js';
+    // import Carousel from './index.js';
+
+    let slides = [
+  {
+    name: 'Penang shrimp',
+    price: 16,
+    image: 'penang_shrimp.png',
+    id: 'penang-shrimp'
+  },
+  {
+    name: 'Chicken cashew',
+    price: 14,
+    image: 'chicken_cashew.png',
+    id: 'chicken-cashew'
+  },
+  {
+    name: 'Red curry veggies',
+    price: 12.5,
+    image: 'red_curry_vega.png',
+    id: 'red-curry-veggies'
+  },
+  {
+    name: 'Chicken springrolls',
+    price: 6.5,
+    image: 'chicken_loempias.png',
+    id: 'chicken-springrolls'
+  }
+];
+
+
+   
+   
+
+    // import createElement from '../../assets/lib/create-element.js';
+ function fu(html) {
+  const div = document.createElement('div');
+  div.innerHTML = html;
+  return div.firstElementChild;
+};
+
+ class Carousel {
+  constructor(slides) {
+    this.slides = slides;
+    this.render() || null;
+    const arrow_one = this.elem.querySelector(".carousel__arrow_right");
+    const arrow_two = this.elem.querySelector(".carousel__arrow_left");
+    const carousel = this.elem.querySelector(".carousel__inner");
+    const maxR = slides.length - 1;
+    const maxL = 0;
+    this.count = 0;
+    arrow_two.style.display = 'none';
+    arrow_one.addEventListener('click', OnClickRightArr);
+    arrow_two.addEventListener('click', OnClickLeftArr) 
+  }
+  OnClickRightArr = () => {
+      this.count++;
+      this.arrow_two.style.display = '';
+      if (this.count === this.maxR) {
+        this.arrow_one.style.display = 'none';
+      }
+      this.carousel.style.transform = `translateX(-${this.carousel.offsetWidth * this.count}px)`;
+    };
+  
+    OnClickLeftArr = () => {
+      this.count--;
+      this.arrow_one.style.display = '';
+      if (this.count === this.maxL) {
+        this.arrow_two.style.display = 'none';
+      }
+      this.carousel.style.transform = `translateX(-${this.carousel.offsetWidth * this.count}px)`;
+    };
+  
+
+  render() {
+    this.elem = fu(`
+    <div class="carousel">
+    <!--Кнопки переключения-->
+      <div class="carousel__arrow carousel__arrow_right">
+        <img src="../../assets/images/icons/angle-icon.svg" alt="icon">
+      </div>
+      <div class="carousel__arrow carousel__arrow_left">
+        <img src="../../assets/images/icons/angle-left-icon.svg" alt="icon">
+      </div>
+      <div class="carousel__inner">
+        ${this.slides.map(elem => `
+          <div class="carousel__slide" data-id="${elem.id}">
+            <img src="../../assets/images/carousel/${elem.image}" class="carousel__img" alt="slide">
+            <div class="carousel__caption">
+              <span class="carousel__price">€${elem.price.toFixed(2)}</span>
+            <div class="carousel__title">${elem.name}</div>
+            <button type="button" class="carousel__button">
+              <img src="../../assets/images/icons/plus-icon.svg" alt="icon">
+            </button>
+          </div>
+        </div>`).join('')}
+      </div>
+    </div>`);
+
+    this.elem.addEventListener("click", this.#OnclickButton);
+  }
+  #OnclickButton = (event) => {
+    if (event.target.closest(".carousel__button")) {
+      this.elem.dispatchEvent(new CustomEvent("product-add", {
+        detail: this.slides[this.count].id,
+        bubbles: true
+      }));
+    }
+  };
+}
+let carousel = new Carousel(slides);
+let containerElement = document.body.querySelector('.container');
+    containerElement.append(carousel.elem);
+
+  </script>
+</body>
+
+</html>
