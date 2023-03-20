@@ -6,12 +6,12 @@ export default class Modal {
   constructor() {
     this.elem = this.render();
     this.elem.querySelector(".modal__close").addEventListener("click", this.#buttonClose);
-    document.addEventListener("keydown", this.#onClickEsc);
   }
 
   open = () => {
     document.body.classList.add("is-modal-open");
     document.body.append(this.elem);
+    document.addEventListener("keydown", this.#onClickEsc);
   }
 
   setTitle = (title) => {
