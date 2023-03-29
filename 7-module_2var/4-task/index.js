@@ -53,6 +53,10 @@ export default class StepSlider {
     console.log(leftRelative);
     this.#value = Math.round(leftRelative * this.#allSteps);
     this.elem.querySelector('.slider__value').innerHTML = this.#value;
+    if (this.elem.querySelector(".slider__step-active")) {
+      this.elem.querySelector(".slider__step-active").classList.remove("slider__step-active");
+    }
+    this.elem.querySelectorAll("span")[this.#value + 1].classList.add("slider__step-active");
   }
 
   #onPointerUp = (event) =>{
