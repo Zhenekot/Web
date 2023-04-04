@@ -27,16 +27,16 @@ export default class StepSlider {
     this.#addcustEvent();
   }
 
-  #onPointerDown = () => {
+  #onPointerDown = (event) => {
+    event.preventDefault();
     this.elem.classList.add("slider_dragging");
     document.addEventListener('pointermove', this.#onPointerMove);
     document.addEventListener('pointerup', this.#onPointerUp);
     this.#thumb.ondragstart = () => false;
-    this.#thumb.pointermove = () => false;
-    this.#thumb.pointerdown = () => false;
   }
 
   #onPointerMove = (event) => {
+    event.preventDefault();
     let left = event.clientX - this.elem.getBoundingClientRect().left;
     let leftRelative = left / this.elem.offsetWidth;
 
@@ -50,9 +50,9 @@ export default class StepSlider {
 
     this.#thumb.style.left = `${leftRelative * 100}%`;
     this.#progress.style.width = `${leftRelative * 100}%`;
-    console.log(leftRelative);
     this.#value = Math.round(leftRelative * this.#allSteps);
     this.elem.querySelector('.slider__value').innerHTML = this.#value;
+    
     if (this.elem.querySelector(".slider__step-active")) {
       this.elem.querySelector(".slider__step-active").classList.remove("slider__step-active");
     }
