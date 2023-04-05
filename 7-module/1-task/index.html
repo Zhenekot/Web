@@ -7,7 +7,7 @@
   <title>Бангкок Экспресс: Лента-Меню</title>
 
   <link rel="stylesheet" href="./index.css" />
-  <link rel="stylesheet" href="../../assets/styles/common.css" />
+  <link rel="stylesheet" href="/assets/styles/common.css" />
 </head>
 
 <body>
@@ -17,52 +17,6 @@
   <script type="module">
     import RibbonMenu from './index.js';
     import categories from './categories.js';
-
-    function fu(html) {
-  const div = document.createElement('div');
-  div.innerHTML = html;
-  return div.firstElementChild;
-};
-
-
-    let categories = [
-  {
-    id: '',
-    name: 'All'
-  },
-  {
-    id: 'salads',
-    name: 'Salads'
-  },
-  {
-    id: 'soups',
-    name: 'Soups'
-  },
-  {
-    id: 'chicken-dishes',
-    name: 'Chicken dishes'
-  },
-  {
-    id: 'beef-dishes',
-    name: 'Beef dishes'
-  },
-  {
-    id: 'seafood-dishes',
-    name: 'Seafood dishes'
-  },
-  {
-    id: 'vegetable-dishes',
-    name: 'Vegetable dishes'
-  },
-  {
-    id: 'bits-and-bites',
-    name: 'Bits and bites'
-  },
-  {
-    id: 'on-the-side',
-    name: 'On the side'
-  }
-];
 
     let ribbon = new RibbonMenu(categories);
 
