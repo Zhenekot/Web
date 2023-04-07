@@ -57,6 +57,134 @@
     import Cart from './index.js';
     import CartIcon from '../1-task/index.js';
 
+//   function createElement(html) {
+//   const div = document.createElement('div');
+//   div.innerHTML = html;
+//   return div.firstElementChild;
+// };
+
+// class CartIcon {
+//   #initialTopCoord = null;
+//   #leftIndent = 0;
+//   constructor() {
+//     this.render();
+//     this.addEventListeners();
+//   }
+
+//   render() {
+//     this.elem = createElement('<div class="cart-icon"></div>');
+//   }
+
+//   update(cart) {
+//     if (!cart.isEmpty()) {
+//       this.elem.classList.add('cart-icon_visible');
+
+//       this.elem.innerHTML = `
+//         <div class="cart-icon__inner">
+//           <span class="cart-icon__count">${cart.getTotalCount()}</span>
+//           <span class="cart-icon__price">€${cart.getTotalPrice()}</span>
+//         </div>`;
+
+//       this.updatePosition();
+
+//       this.elem.classList.add('shake');
+//       this.elem.addEventListener('transitionend', () => {
+//         this.elem.classList.remove('shake');
+//       }, { once: true });
+
+//     } else {
+//       this.elem.classList.remove('cart-icon_visible');
+//     }
+//   }
+
+//   addEventListeners() {
+//     document.addEventListener('scroll', () => this.updatePosition());
+//     window.addEventListener('resize', () => this.updatePosition());
+//   }
+
+//   updatePosition() {
+//     if (this.#initialTopCoord === null) {
+//       this.#initialTopCoord = this.elem.getBoundingClientRect().top + window.pageYOffset;
+//     }
+//     if (window.pageYOffset > this.#initialTopCoord) {
+//       this.#leftIndent = Math.min(
+//         document.querySelector('.container').getBoundingClientRect().right + 20,
+//         document.documentElement.clientWidth - this.elem.offsetWidth - 10
+//       ) + 'px';
+      
+//       Object.assign(this.elem.style, {
+//         position: 'fixed',
+//         top: '50px',
+//         zIndex: 1e3,
+//         right: '10px',
+//         left: this.#leftIndent
+//       });
+//     } else if ((document.documentElement.clientWidth <= 767) || (window.pageYOffset < this.#initialTopCoord)) {
+//       Object.assign(this.elem.style, {
+//         position: '',
+//         top: '',
+//         left: '',
+//         zIndex: ''
+//       });
+//     }
+//   }
+// }
+
+
+// class Cart {
+//   cartItems = []; // [product: {...}, count: N]
+
+//   constructor(cartIcon) {
+//     this.cartIcon = cartIcon;
+//   }
+
+//   addProduct(product) {
+//     if (product !== null) {
+//       let TempInd = this.cartItems.findIndex(item => item.product.id === product.id);
+//       if (TempInd >= 0) {
+//         this.cartItems[TempInd].count++;
+//       } else {
+//         this.cartItems.push({ product: product, count: 1})
+//       }
+//     };
+//     console.log(this.cartItems);
+//     this.onProductUpdate(this.cartItems);
+//   }
+//   updateProductCount(productId, amount) {
+//     let tempProductInd = this.cartItems.findIndex(elem => elem.product.id === productId);
+//     if (this.cartItems[tempProductInd].count > 0) {
+//       this.cartItems[tempProductInd].count += (amount);
+//     }
+//     if(this.cartItems[tempProductInd].count === 0) {
+//       this.cartItems.splice(tempProductInd, 1);
+//     }
+//     console.log(this.cartItems);
+//     this.onProductUpdate(this.cartItems);
+//   }
+
+//   isEmpty() {
+//     return this.cartItems.length === 0;
+//   }
+
+//   getTotalCount() {
+//     let totalCount = 0;
+//     this.cartItems.map(elem => totalCount += elem.count);
+//     return totalCount;
+//   }
+
+//   getTotalPrice() {
+//     let totalPrice = 0;
+//     this.cartItems.map(elem => totalPrice += elem.price * elem.count);
+//     return totalPrice;
+//   }
+
+//   onProductUpdate(cartItem) {
+//     // реализуем в следующей задаче
+
+//     this.cartIcon.update(this);
+//   }
+// }
+
     let cartIcon = new CartIcon();
     let cartIconHolder = document.querySelector('[data-cart-icon-holder]');
     cartIconHolder.append(cartIcon.elem);
