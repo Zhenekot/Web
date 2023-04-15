@@ -34,15 +34,12 @@ export default class Cart {
   }
 
   getTotalCount() {
-    let totalCount = 0;
-    this.cartItems.map(elem => totalCount += elem.count);
-    return totalCount;
+    return this.cartItems.reduce((sum, item) => sum + item.count, 0);
   }
 
   getTotalPrice() {
-    let totalPrice = 0;
-    this.cartItems.map(elem => totalPrice += elem.product.price * elem.count);
-    return totalPrice;
+   
+    return this.cartItems.reduce((sum, item) => sum + item.product.price * item.count, 0);
   }
 
   onProductUpdate(cartItem) {
