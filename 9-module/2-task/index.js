@@ -43,7 +43,7 @@ export default class Main {
     dataProductsGrid.innerHTML = "";
     dataProductsGrid.append(productGrid.elem);
 
-    productsGrid.updateFilter({
+    productGrid.updateFilter({
       noNuts: document.getElementById('nuts-checkbox').checked,
       vegeterianOnly: document.getElementById('vegeterian-checkbox').checked,
       maxSpiciness: this.#stepSlider.value,
@@ -56,25 +56,25 @@ export default class Main {
     });
 
     this.#stepSlider.elem.addEventListener("slider-change", (event) => {
-      productsGrid.updateFilter({
+      productGrid.updateFilter({
         maxSpiciness: event.detail,
       });
     });
 
     this.#ribbonMenu.elem.addEventListener("ribbon-select", (event) => {
-      productsGrid.updateFilter({
+      productGrid.updateFilter({
         category: event.detail,
       });
     });
 
     document.querySelector(".filters").addEventListener("change", (event) => {
       if (event.target.closest("#nuts-checkbox")) {
-        productsGrid.updateFilter({
+        productGrid.updateFilter({
           noNuts: event.target.checked,
         });
       }
       if (event.target.closest("#vegeterian-checkbox")) {
-        productsGrid.updateFilter({
+        productGrid.updateFilter({
           vegeterianOnly: event.target.checked,
         });
       }
