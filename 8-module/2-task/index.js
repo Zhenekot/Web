@@ -4,38 +4,43 @@ import ProductCard from '../../6-module/2-task/index.js';
 export default class ProductGrid {
   #product = null;
   elem = null;
+  #selectProd = [];
   constructor(products) {
-    this.#product  = products;
+    this.#product = products;
     this.#render();
+    this.#selectProd = products;
     this.filters = {};
-    
   }
-  updateFilter(filters){
+
+  updateFilter(filters) {
     Object.assign(this.filters, filters);
-    let arrProduct = [];
-    for(let item of this.#product){
-      if (this.filters.noNuts && item.nuts){
-        continue;
-      } 
-      if(this.filters.vegeterianOnly && !item.vegeterian){
-        continue;
-      }
-      if(this.filters.maxSpiciness && item.spiciness > this.filters.maxSpiciness){
-        continue;
-      }
-      if(this.filters.category && this.filters.category !== item.category){
-        continue;
-      }
-      arrProduct.push(item);
+    if (this.filters.noNuts) {
+      this.#product = this.#product.filter(item => !("nuts" in item) || item.nuts === false);
     }
+
+    if (this.filters.vegeterianOnly) {
+      this.#product = this.#product.filter(item => item.vegeterian === true);
+    }
+
+    if (this.filters.maxSpiciness >= 0 && this.filters.maxSpiciness <= 4) {
+      this.#product = this.#product.filter(item => item.spiciness <= this.filters.maxSpiciness);
+    }
+
+    if (this.filters.category) {
+      this.#product = this.#product.filter(item => item.category === this.filters.category);
+    }
+
     this.elem.querySelector(".products-grid__inner").innerHTML = "";
     let temp = "";
-    arrProduct.forEach(item => {
+    this.#product.forEach(item => {
       temp += new ProductCard(item).elem.innerHTML;
     });
     this.elem.querySelector(".products-grid__inner").innerHTML = temp;
+    this.#product = this.#selectProd;
   }
-  #render(){
+
+
+  #render() {
     let temp = "";
     this.#product.forEach(item => {
       temp += new ProductCard(item).elem.innerHTML;

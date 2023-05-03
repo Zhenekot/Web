@@ -149,7 +149,7 @@ export default class Cart {
   }
 
   onProductUpdate(cartItem) {
-    console.log(this.targetId);
+    // console.log(this.targetId);
     if (document.querySelector(".is-modal-open")) {
       for (let elem of this.cartItems) {
         if (this.targetId === elem.product.id) {
