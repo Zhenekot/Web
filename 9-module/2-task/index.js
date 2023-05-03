@@ -11,32 +11,35 @@ import CartIcon from '../../8-module/1-task/index.js';
 import Cart from '../../8-module/4-task/index.js';
 
 export default class Main {
-
+  
   #carousel = null;
   #ribbonMenu = null;
   #stepSlider = null;
   #cartIcon = null;
-  #cart = null;
   constructor() {
     this.#carousel = new Carousel(slides);
     this.#ribbonMenu = new RibbonMenu(categories);
     this.#stepSlider = new StepSlider({ steps: 3 });
     this.#cartIcon = new CartIcon();
-    this.#cart = new Cart(this.#cartIcon);
+
   }
 
   async render() {
     document.querySelector("[data-carousel-holder]").append(this.#carousel.elem);
+
     document.querySelector("[data-ribbon-holder]").append(this.#ribbonMenu.elem);
+
     document.querySelector("[data-slider-holder]").append(this.#stepSlider.elem);
-    document.querySelector("[data-slider-holder]").append(this.#cartIcon.elem);
 
-    let productList = await fetch('products.json').then(response => response.json());
-    // async function getProductList() {
-    //   return await fetch('products.json').then(response => response.json());
-    // }
+    document.querySelector("[data-cart-icon-holder]").append(this.#cartIcon.elem);
 
-    // let productList = await getProductList();
+    let cart = new Cart(this.#cartIcon);
+
+    async function getProductList() {
+      return await fetch('products.json').then(response => response.json());
+    }
+
+    let productList = await getProductList();
 
     let productGrid = new ProductsGrid(productList);
     let dataProductsGrid = document.querySelector("[data-products-grid-holder]");
@@ -52,7 +55,7 @@ export default class Main {
 
     document.body.addEventListener("product-add", (event) => {
       let productToAdd = productList.find((product) => product.id === event.detail);
-      this.#cart.addProduct(productToAdd.elem);
+      cart.addProduct(productToAdd);
     });
 
     this.#stepSlider.elem.addEventListener("slider-change", (event) => {
