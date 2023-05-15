@@ -5,7 +5,8 @@ import Modal from '../../7-module/2-task/index.js';
 
 export default class Cart {
   cartItems = []; // [product: {...}, count: N]
-
+  #modalWindow = null;
+  #modal = null;
   constructor(cartIcon) {
     this.cartIcon = cartIcon;
 
@@ -101,15 +102,15 @@ export default class Cart {
   }
 
   renderModal() {
-    this.modal = new Modal();
-    let modalWindow = createElement(`<div></div>`);
-    this.modal.setTitle('Your order');
+    this.#modal = new Modal();
+    this.#modalWindow = createElement(`<div></div>`);
+    this.#modal.setTitle('Your order');
 
-    this.cartItems.map(item => modalWindow.append(this.renderProduct(item.product, item.count)));
-    modalWindow.append(this.renderOrderForm());
-    this.modal.setBody(modalWindow);
+    this.cartItems.map(item => this.#modalWindow.append(this.renderProduct(item.product, item.count)));
+    this.#modalWindow.append(this.renderOrderForm());
+    this.#modal.setBody(this.#modalWindow);
 
-    this.modal.open();
+    this.#modal.open();
     document.querySelector(".modal").addEventListener("click", (event) => counter(event));
 
     let counter = (event) => {
@@ -121,8 +122,8 @@ export default class Cart {
             this.updateProductCount(this.targetId, -1);
             this.onProductUpdate(this.cartItems);
             if (elem.count === 0) {
-              if (this.modal || this.cartItems.length === 0) {
-                this.modal.close();
+              if (this.#modal || this.cartItems.length === 0) {
+                this.#modal.close();
               } 
               if (this.cartItems.length) {
                 this.renderModal();
@@ -175,34 +176,35 @@ export default class Cart {
     this.cartIcon.update(this);
   }
 
-  onSubmit(event) {
-    
-    document.querySelector("[type=submit]").classList.add("is-loading");
+onSubmit = async(event) => {
 
-    let form = document.querySelector(".cart-form");
+  let button = this.#modalWindow.querySelector("button[type='submit']");
+  button.classList.add("is-loading");
 
-    let result = fetch('https://httpbin.org/post', {
-      method: 'POST',
-      body: new FormData(form)
-    });
+  let cartForm = this.#modalWindow.querySelector(".cart-form");
 
-    result.then(() => {
-      
-      this.modal.setTitle("Success!");
-      this.cartItems = [];
-      this.cartIcon.update(this);
-      document.querySelector(".modal__body").innerHTML = `
-        <div class="modal__body-inner">
-          <p>
-             Order successful! Your order is being cooked :) <br>
-             We’ll notify you about delivery time shortly.<br>
-             <img src="/assets/images/delivery.gif">
-          </p>
-        </div>`;
-    });
-  };
+  let response = await fetch("https://httpbin.org/post", {
+    method: 'POST',
+    body: new FormData(cartForm)
+  });
 
-  addEventListeners() {
-    this.cartIcon.elem.onclick = () => this.renderModal();
+  if (response.ok) {
+    this.#modal.setTitle("Success!");
+    this.cartItems.length = 0;
+    this.cartIcon.update(this);
+    this.#modalWindow.innerHTML = `
+      <div class="modal__body-inner">
+        <p>
+          Order successful! Your order is being cooked :) <br>
+          We’ll notify you about delivery time shortly.<br>
+          <img src="/assets/images/delivery.gif">
+        </p>
+      </div>
+    `;
   }
+}
+
+addEventListeners() {
+  this.cartIcon.elem.onclick = () => this.renderModal();
+}
 }
